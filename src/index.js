@@ -1,33 +1,23 @@
 import './style.css';
-import loadContent from './loadContent.js';
+import loadContent from './loaders/loadContent.js';
 import styleSelected from './utility/styleSelected.js';
 
 
-window.onload = loadContent('home')
+document.addEventListener('DOMContentLoaded', () => {
+    loadContent('home');
+});
 
-const homeBtn = document.querySelector('#home')
-const menuBtn = document.querySelector('#menu')
-const aboutBtn = document.querySelector('#about')
+const nav = document.querySelector('nav')
 
-homeBtn.addEventListener('click', () => {
-    styleSelected(homeBtn, 'selected')
 
-    loadContent('home')
+function handleNavBtn(btn) {
+    styleSelected(btn, 'selected')
+    loadContent(btn.id)
+}
+
+nav.addEventListener('click', e => {
+    const button = e.target.closest('button');
+    handleNavBtn(button)
 })
-menuBtn.addEventListener('click', () => {
-    styleSelected(menuBtn, 'selected')
-
-    loadContent('menu')
-})
-aboutBtn.addEventListener('click', () => {
-    styleSelected(aboutBtn, 'selected')
-    loadContent('about')
-})
-
-
-
-
-
-
 
 

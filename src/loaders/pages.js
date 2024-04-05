@@ -1,6 +1,6 @@
-import homePage from './pages/homePage.js'
-import menuPage from './pages/menuPage.js'
-import aboutPage from './pages/aboutPage.js'
+import homePage from '../pages/homePage.js'
+import menuPage from '../pages/menuPage.js'
+import aboutPage from '../pages/aboutPage.js'
 
 
 let pages = (function() {

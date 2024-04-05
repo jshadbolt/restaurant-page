@@ -1,0 +1,159 @@
+:root {
+    /* colors */
+    --accent: rgb(255, 175, 100);
+    --dark: #121212;
+    --light: #efefef;
+    /* transparent colors */
+
+    /* txt size */
+    --size-display: 78px;
+    --size-content: 33px;
+}
+
+@font-face {
+    font-family: 'playfair';
+    src: url('./font/PlayfairDisplay-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'playfair';
+    src: url('./font/PlayfairDisplay-Italic-VariableFont_wght.ttf');
+    font-style: italic;
+}
+/*  */
+@font-face {
+    font-family: 'montserrat';
+    src: url('./font/MontserratAlternates-Regular.ttf');
+}
+
+/*  */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: futura;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+img, picture, svg, video {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    color: var(--light);
+    background-color: var(--dark);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    background-color: var(--brand-main);
+    position: relative;
+    padding: 10px 0 0;
+}
+
+nav > button {
+    /* letter-spacing: 3px; */
+    border: none;
+    background-color: transparent;
+    vertical-align: center;
+    padding: 5px 15px;
+
+    color: var(--light);
+    font-size: 1rem;
+    font-family: 'playfair';
+    font-style: italic;
+}
+
+
+#content {
+
+}
+
+.title {
+    font-family: 'playfair';
+    font-size: var(--size-display);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    margin-bottom: 25px;
+
+    background-image: url('./img/hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 20%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    /* filter: FlipH;
+    transform: scaleX(-1); */
+}
+
+.hero {
+    height: 400px;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.hero > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.subtitle {
+    text-align: center;
+    
+}
+
+.para-wrap {
+    display: flex;
+    justify-content: center;
+
+    font-family: 'playfair';
+    font-weight: bold;
+    text-transform: uppercase;
+
+    background-image: url('./img/hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 25%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    filter: brightness(1.5);
+}
+
+.para {
+
+    text-align: justify;
+    max-width: 45ch;
+    font-size: 0.9rem;
+    padding: 0 15px;
+    letter-spacing: 2px;
+}
+
+/* pseudos */
+
+nav > button:hover {
+    color: var(--accent);
+    /* text-decoration: underline; */
+    text-underline-offset: 5px;
+}
+
+nav > button:focus {
+    outline: none;
+    box-shadow: none;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}

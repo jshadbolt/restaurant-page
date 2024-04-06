@@ -2,8 +2,9 @@ import loadContent from './loadContent.js';
 import styleSelected from '../utility/styleSelected.js';
 
 function navBar() {
+    
     document.addEventListener('DOMContentLoaded', () => {
-        loadContent('about');
+        loadContent('home');
     });
 
     const nav = document.querySelector('nav')

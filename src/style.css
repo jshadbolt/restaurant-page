@@ -74,7 +74,6 @@ nav > button {
     transition: all 0.1s ease-out;
 }
 
-
 #content {
 
 }
@@ -148,14 +147,16 @@ nav > button {
     display: flex;
     flex-direction: column;
     gap: 50px;
+    scrollbar-width: 0px;
 }
 
 .item-wrapper {
     display: flex;
     flex-direction: column;
     width: 50%;
-    height: 200px;
+    /* height: 200px; */
     margin: auto;
+    position: relative;
 }
 
 .item-photo {
@@ -163,19 +164,37 @@ nav > button {
     object-fit: cover;
     object-position: center center;
     margin-bottom: 10px;
+
+    filter: saturate(0);
+
+    transition: saturate 0.3s height 0.2s;
+
+
+}
+
+/* see mroe button where the photo goes to the side and is fully revealed */
+
+.expand-button {
+    position: absolute;
+    right: 0;
+    background: silver;
+    color: var(--dark);
+    border-radius: 3px;
+    padding: 3px 5px;
 }
 
 .itemTextContent {
-
+    text-align: justify;
+    color: var(--light);
+    font-size: 1rem;
+    font-family: 'playfair';
 
 }
 
 .itemTextContent > .item-title {
-    font-family: 'playfair';
     font-weight: bold;
     text-transform: uppercase;
 
-    text-align: justify;
     max-width: 45ch;
     font-size: 0.9rem;
     letter-spacing: 2px;
@@ -184,23 +203,12 @@ nav > button {
 }
 
 .itemTextContent > .item-description {
-    text-align: justify;
-    color: var(--light);
-    font-size: 1rem;
-    font-family: 'playfair';
     font-style: italic;
-
     margin-bottom: 10px;
 }
 
 .itemTextContent > .info-wrapper {
-    text-align: justify;
     vertical-align: center;
-    color: var(--light);
-    font-size: 1rem;
-    font-family: 'playfair';
-    /* font-style: italic; */
-
     display: flex;
     gap: 5px;
 
@@ -214,7 +222,6 @@ nav > button {
     color:  var(--accent);
     border-bottom: 1px solid var(--light);
 }
-
 
 /* pseudos */
 
@@ -235,4 +242,14 @@ nav > button:focus:not(.selected) {
     color: var(--accent);
     border-bottom-color: var(--accent);
     border-bottom-width: 4px;
+}
+
+.expandedBtn {
+    /* height: 300px; */
+    border: 2px solid green;
+}
+
+.expandedImg {
+    height: 300px;
+    filter: saturate(1);
 }

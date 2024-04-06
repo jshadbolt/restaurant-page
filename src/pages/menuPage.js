@@ -2,12 +2,34 @@ import createEl from '../utility/createEl.js'
 import attachEl from '../utility/attachEl.js'
 
 import menuData from '../data/menuData.js'
+import styleSelected from '../utility/styleSelected.js'
+
+
+
 
 
 function menuPage(target) {
 
+
     let menuWrapper = createEl.div({'class' : 'menu-wrapper'})
-    
+
+
+    function handleExpandBtn(btn) {
+        if (btn.classList.contains('expandedBtn')) {
+            btn.classList.remove('expandedBtn')
+            btn.parentElement.querySelector('img').classList.remove('expandedImg')
+        } else {
+            styleSelected(btn, menuWrapper, 'button', 'expandedBtn')
+            styleSelected(btn.parentElement.querySelector('img'), menuWrapper, 'img', 'expandedImg')
+            btn.textContent = btn.textContent === 'More' ? 'Less' : 'More'
+        }
+    }
+
+    menuWrapper.addEventListener('click', e => {
+        const button = e.target.closest('button');
+        handleExpandBtn(button)
+    })
+
 
     for (let entry in menuData) {
 
@@ -19,6 +41,10 @@ function menuPage(target) {
             photo.src = currentItem.image
             photo.classList.add('item-photo')
         itemWrapper.appendChild(photo)
+
+        let expandBtn = createEl.element('button', {'class' : 'expand-button'})
+        expandBtn.textContent = 'More'
+        itemWrapper.appendChild(expandBtn)
 
         let textContent = createEl.div({'class' : 'itemTextContent'})
 

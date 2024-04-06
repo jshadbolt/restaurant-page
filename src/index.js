@@ -4,20 +4,24 @@ import styleSelected from './utility/styleSelected.js';
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadContent('home');
+    loadContent('menu');
 });
 
 const nav = document.querySelector('nav')
 
 
 function handleNavBtn(btn) {
-    styleSelected(btn, 'selected')
+    styleSelected(btn, nav, 'button', 'selected')
     loadContent(btn.id)
 }
 
 nav.addEventListener('click', e => {
     const button = e.target.closest('button');
+    // let id = button.id
+    // console.log(button.id)
+
     handleNavBtn(button)
+    
 })
 
 

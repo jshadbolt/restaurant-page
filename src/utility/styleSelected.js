@@ -1,8 +1,10 @@
-let styleSelected = function(target, style) {
+let styleSelected = function(target, parent, childType, style) {
 
-    let group = target.parentNode.children
 
-    for (let child of group) {
+    let childrens = parent.querySelectorAll(childType)
+
+
+    for (let child of childrens) {
         if (child === target) {
             child.classList.add(style)
         } else {
@@ -11,5 +13,6 @@ let styleSelected = function(target, style) {
     }
 
 }
+
 
 export default styleSelected;

@@ -17,6 +17,10 @@ function handleNavBtn(btn) {
 
 nav.addEventListener('click', e => {
     const button = e.target.closest('button');
+    if (button === null) {
+        console.log('nav tab error')
+        return
+    }
     // let id = button.id
     // console.log(button.id)
 

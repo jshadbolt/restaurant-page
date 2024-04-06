@@ -3,6 +3,7 @@
     --accent: rgb(255, 175, 100);
     --dark: #121212;
     --light: #efefef;
+    --mid: rgb(189, 189, 189);
     /* transparent colors */
 
     /* txt size */
@@ -143,7 +144,7 @@ nav > button {
 }
 
 .menu-wrapper {
-    padding: 100px 0;
+    padding: 25px 0 50px 0;
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -157,48 +158,89 @@ nav > button {
     /* height: 200px; */
     margin: auto;
     position: relative;
+
+
+    border-radius: 3px;
+    overflow: hidden;
+
+
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+    transition: box-shadow 0.1s ease-in-out;
 }
 
 .item-photo {
-    height: 50px;
+    height: 0px;
+    width: 100%;
     object-fit: cover;
     object-position: center center;
     margin-bottom: 10px;
 
-    filter: saturate(0.3);
+    filter: blur(2px) saturate(0.5);
+    overflow: hidden;
 
-    transition: all 0.3s ease-out;
-
-
+    transition: filter 0.2s ease-in-out, height 0.5s ease-in-out; 
 }
-
-/* see mroe button where the photo goes to the side and is fully revealed */
 
 .expand-button {
     position: absolute;
-    right: 3px;
-    top: 3px;
+    right: 2px;
+    top: 2px; 
 
-    background: silver;
+    /* width: 20px; */
+    height: 20px;
+    width: 20px;
+    padding: 3px 0;
+    margin-left: auto;
+
+    background: rgba(137, 137, 137, 0.994);
     color: var(--dark);
-    border-radius: 3px;
-    padding: 1px 7px;
+    /* border-radius: 3px; */
+    /* padding: 3px; */
     border: none;
     appearance: none;
 
-    text-align: justify;
-    font-family: 'playfair';
+
+    background-image: url(./img/icon/menu-up.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 25px;
+    
+
+    /* text-align: justify; */
+    /* font-family: 'playfair'; */
+    transition: background-color 0.3s;
+    z-index: 2;
 }
 
-.itemTextContent {
+.itemTextContent, .guide, .section-title {
     text-align: justify;
     color: var(--light);
     font-size: 1rem;
     font-family: 'playfair';
-
+    padding: 10px;
 }
 
-.itemTextContent > .item-title {
+.guide {
+    font-size: 0.8rem;
+    width: 50%;
+    margin: auto;
+    padding: 10px 0;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.guide-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    padding: 50px 0;
+}
+
+.guide-text {
+    margin-bottom: 50px;
+}
+
+.section-title, .item-title {
     font-weight: bold;
     text-transform: uppercase;
 
@@ -209,9 +251,29 @@ nav > button {
     margin-bottom: 10px;
 }
 
+.section-title {
+    width: 50%;
+    margin: auto;
+
+
+    font-size: 2rem;
+
+    background-image: url('./img/hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20% 5%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    filter: brightness(1);
+    padding: 10px 0;
+    margin-bottom: 30px;
+}
+
+
 .itemTextContent > .item-description {
     font-style: italic;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
 }
 
 .itemTextContent > .info-wrapper {
@@ -251,12 +313,33 @@ nav > button:focus:not(.selected) {
     border-bottom-width: 4px;
 }
 
+.item-selected {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+.expand-button:focus {
+    outline: none;
+    appearance: none;
+    background-color: var(--accent);
+}
+
+.expand-button:hover:not(.expand-button:focus) {
+    background-color: var(--accent);
+}
+
 .expandedBtn {
+    background-image: url(./img/icon/menu-down.svg);
     /* height: 300px; */
+    /* color: var(--accent); */
 }
 
 .expandedImg {
     height: 300px;
+    width: 100%;
+
     filter: saturate(1);
+    filter: blur(0px);
+
 }
 

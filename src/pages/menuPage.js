@@ -10,24 +10,57 @@ import styleSelected from '../utility/styleSelected.js'
 
 function menuPage(target) {
 
+    let guide = createEl.div({'class' : 'guide'})
+        let guideTitle  = createEl.div({'class' : 'guide-title'})
+        guideTitle.textContent = `Allergens`
+        guide.appendChild(guideTitle)
 
+        let guideText =  createEl.div({'class' : 'guide-text'})
+        guideText.textContent = 'GF ~ Gluten free  |  DF ~ Dairy free'
+        guide.appendChild(guideText)
+    target.appendChild(guide)
+
+
+    
+    let sectionTitle = createEl.div({'class' : 'section-title'})
+    sectionTitle.textContent = 'Sweet Items'
+    target.appendChild(sectionTitle)
+    
     let menuWrapper = createEl.div({'class' : 'menu-wrapper'})
-
 
     function handleExpandBtn(btn) {
         if (btn.classList.contains('expandedBtn')) {
             btn.classList.remove('expandedBtn')
             btn.parentElement.querySelector('img').classList.remove('expandedImg')
+            btn.parentElement.classList.remove('item-selected')
+            // btn.textContent = btn.textContent === '▲' ? '▼' : '▲'
         } else {
             styleSelected(btn, menuWrapper, 'button', 'expandedBtn')
             styleSelected(btn.parentElement.querySelector('img'), menuWrapper, 'img', 'expandedImg')
-            btn.textContent = btn.textContent === 'More' ? 'Less' : 'More'
+            styleSelected(btn.parentElement, menuWrapper, 'div', 'item-selected')
+            // btn.textContent = btn.textContent === '▲' ? '▼' : '▲'
         }
+    }
+
+    function collapseAll() {
+        let btns = menuWrapper.querySelectorAll('button')
+        btns.forEach(btn => {
+            btn.classList.remove('expandedBtn')
+            btn.textContent = ''
+        })
+
+        let images = menuWrapper.querySelectorAll('img')        
+        images.forEach(image => image.classList.remove('expandedImg'))
+
+        let items = menuWrapper.querySelectorAll('.item-wrapper')
+        items.forEach(item => item.classList.remove('item-selected'))
+        
     }
 
     menuWrapper.addEventListener('click', e => {
         const button = e.target.closest('button');
         if (button == null) {
+            collapseAll()
             console.log('clicked outside')
             return
         }
@@ -41,14 +74,14 @@ function menuPage(target) {
         
         let itemWrapper = createEl.div({'class' : 'item-wrapper'})
 
-        let photo = new Image()
-            photo.src = currentItem.image
-            photo.classList.add('item-photo')
-        itemWrapper.appendChild(photo)
-
         let expandBtn = createEl.element('button', {'class' : 'expand-button'})
-        expandBtn.textContent = 'More'
+        // expandBtn.textContent = '▲'
         itemWrapper.appendChild(expandBtn)
+
+        let photo = new Image()
+        photo.src = currentItem.image
+        photo.classList.add('item-photo')
+        itemWrapper.appendChild(photo)
 
         let textContent = createEl.div({'class' : 'itemTextContent'})
 

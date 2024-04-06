@@ -92,6 +92,7 @@ nav > button {
     background-image: url('./img/hero.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    /* background-size: 110%; */
     background-position: 0% 20%;
     color: transparent;
     background-clip: text;
@@ -141,6 +142,79 @@ nav > button {
     padding: 0 15px;
     letter-spacing: 2px;
 }
+
+.menu-wrapper {
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.item-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 200px;
+    margin: auto;
+}
+
+.item-photo {
+    height: 50px;
+    object-fit: cover;
+    object-position: center center;
+    margin-bottom: 10px;
+}
+
+.itemTextContent {
+
+
+}
+
+.itemTextContent > .item-title {
+    font-family: 'playfair';
+    font-weight: bold;
+    text-transform: uppercase;
+
+    text-align: justify;
+    max-width: 45ch;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.itemTextContent > .item-description {
+    text-align: justify;
+    color: var(--light);
+    font-size: 1rem;
+    font-family: 'playfair';
+    font-style: italic;
+
+    margin-bottom: 10px;
+}
+
+.itemTextContent > .info-wrapper {
+    text-align: justify;
+    vertical-align: center;
+    color: var(--light);
+    font-size: 1rem;
+    font-family: 'playfair';
+    /* font-style: italic; */
+
+    display: flex;
+    gap: 5px;
+
+}
+
+.itemTextContent > .info-wrapper > .price {
+    margin-right: auto;
+}
+
+.gf, .df {
+    color:  var(--accent);
+    border-bottom: 1px solid var(--light);
+}
+
 
 /* pseudos */
 

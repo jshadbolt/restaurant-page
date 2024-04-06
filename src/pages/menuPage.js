@@ -12,40 +12,53 @@ function menuPage(target) {
     for (let entry in menuData) {
 
         let currentItem = menuData[entry]
-
+        
         let itemWrapper = createEl.div({'class' : 'item-wrapper'})
+
+        let photo = new Image()
+            photo.src = currentItem.image
+            photo.classList.add('item-photo')
+        itemWrapper.appendChild(photo)
+
+        let textContent = createEl.div({'class' : 'itemTextContent'})
 
         let title = createEl.div({'class' : 'item-title'})
             title.textContent = entry
-        itemWrapper.appendChild(title)
+        textContent.appendChild(title)
 
         let description = createEl.div({'class' : 'item-description'})
             description.textContent = currentItem.description
-        itemWrapper.appendChild(description)
-
+        textContent.appendChild(description)
 
         let infoWrapper = createEl.div({'class' : 'info-wrapper'})
             let price = createEl.div({'class' : 'price'})
-            price.textContent = currentItem.price
+                price.textContent = currentItem.price
             infoWrapper.appendChild(price)
+
             let gf = createEl.div({'class' : 'gf'})
-            gf.textContent = (function() {
-                return currentItem.glutenFree === true ? 'Yes' : 'No'
-            })()
+                gf.textContent = (function() {
+                    return currentItem.glutenFree === true ? 'GF' : ''
+                })()
             infoWrapper.appendChild(gf)
-        itemWrapper.appendChild(infoWrapper)
+
+            let df = createEl.div({'class' : 'df'})
+            df.textContent = (function() {
+                return currentItem.dairyFree === true ? 'DF' : ''
+            })()
+            infoWrapper.appendChild(df)
+        textContent.appendChild(infoWrapper)
 
 
+        attachEl(textContent, itemWrapper, 'append')
 
-    
         attachEl(itemWrapper, menuWrapper, 'append')
 
     }
 
-    attachEl(menuWrapper, target, 'append')
 
+    attachEl(menuWrapper, target, 'append')
 }
 
 
-
+// MENU GENERATOR
 export default menuPage;

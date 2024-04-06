@@ -165,9 +165,9 @@ nav > button {
     object-position: center center;
     margin-bottom: 10px;
 
-    filter: saturate(0);
+    filter: saturate(0.3);
 
-    transition: saturate 0.3s height 0.2s;
+    transition: all 0.3s ease-out;
 
 
 }
@@ -176,11 +176,18 @@ nav > button {
 
 .expand-button {
     position: absolute;
-    right: 0;
+    right: 3px;
+    top: 3px;
+
     background: silver;
     color: var(--dark);
     border-radius: 3px;
-    padding: 3px 5px;
+    padding: 1px 7px;
+    border: none;
+    appearance: none;
+
+    text-align: justify;
+    font-family: 'playfair';
 }
 
 .itemTextContent {
@@ -246,10 +253,10 @@ nav > button:focus:not(.selected) {
 
 .expandedBtn {
     /* height: 300px; */
-    border: 2px solid green;
 }
 
 .expandedImg {
     height: 300px;
     filter: saturate(1);
 }
+

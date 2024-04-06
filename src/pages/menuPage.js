@@ -27,6 +27,10 @@ function menuPage(target) {
 
     menuWrapper.addEventListener('click', e => {
         const button = e.target.closest('button');
+        if (button == null) {
+            console.log('clicked outside')
+            return
+        }
         handleExpandBtn(button)
     })
 
@@ -81,6 +85,9 @@ function menuPage(target) {
 
     }
 
+    // make first item open on load
+    let firstBtn = menuWrapper.querySelector('button')
+    handleExpandBtn(firstBtn)
 
     attachEl(menuWrapper, target, 'append')
 }

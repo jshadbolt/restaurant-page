@@ -33,12 +33,10 @@ function menuPage(target) {
             btn.classList.remove('expandedBtn')
             btn.parentElement.querySelector('img').classList.remove('expandedImg')
             btn.parentElement.classList.remove('item-selected')
-            // btn.textContent = btn.textContent === '▲' ? '▼' : '▲'
         } else {
             styleSelected(btn, menuWrapper, 'button', 'expandedBtn')
             styleSelected(btn.parentElement.querySelector('img'), menuWrapper, 'img', 'expandedImg')
             styleSelected(btn.parentElement, menuWrapper, 'div', 'item-selected')
-            // btn.textContent = btn.textContent === '▲' ? '▼' : '▲'
         }
     }
 
@@ -75,7 +73,6 @@ function menuPage(target) {
         let itemWrapper = createEl.div({'class' : 'item-wrapper'})
 
         let expandBtn = createEl.element('button', {'class' : 'expand-button'})
-        // expandBtn.textContent = '▲'
         itemWrapper.appendChild(expandBtn)
 
         let photo = new Image()

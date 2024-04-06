@@ -1,10 +1,23 @@
 :root {
-    /* colors */
-    --accent: rgb(255, 175, 100);
+    /* dark mode*/
+    /* --accent: rgb(255, 175, 100);
     --dark: #121212;
     --light: #efefef;
-    --mid: rgb(189, 189, 189);
-    /* transparent colors */
+    --mid: rgb(189, 189, 189); */
+/* 
+    --shadow-small: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+    --shadow-large: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+
+
+    /* light mode */
+    --accent: rgb(100, 159, 255);
+    --dark: #efefef;
+    --light: #101010;
+    --mid: rgb(89, 89, 89);
+
+    --shadow-small: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    --shadow-large: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
 
     /* txt size */
     --size-display: 78px;
@@ -62,7 +75,7 @@ nav {
 
 nav > button {
     /* letter-spacing: 3px; */
-    border: 4px solid transparent;
+    border: 3px solid transparent;
     background-color: transparent;
     vertical-align: center;
     padding: 5px 15px;
@@ -160,11 +173,11 @@ nav > button {
     position: relative;
 
 
-    border-radius: 3px;
+    /* border-radius: 3px; */
     overflow: hidden;
+    box-shadow: var(--shadow-small);
 
 
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
     transition: box-shadow 0.1s ease-in-out;
 }
 
@@ -192,12 +205,13 @@ nav > button {
     padding: 3px 0;
     margin-left: auto;
 
-    background: rgba(137, 137, 137, 0.994);
-    color: var(--dark);
+    /* background: var(--mid); */
     /* border-radius: 3px; */
     /* padding: 3px; */
     border: none;
     appearance: none;
+    border-radius: 2px;
+
 
 
     background-image: url(./img/icon/menu-up.svg);
@@ -255,18 +269,20 @@ nav > button {
     width: 50%;
     margin: auto;
 
-
+    color: var(--light);
     font-size: 2rem;
 
-    background-image: url('./img/hero.jpg');
+    /* background-image: url('./img/hero.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 20% 5%;
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
-    filter: brightness(1);
+    filter: brightness(1); */
+
     padding: 10px 0;
+    margin-top: 50px;
     margin-bottom: 30px;
 }
 
@@ -289,7 +305,7 @@ nav > button {
 
 .gf, .df {
     color:  var(--accent);
-    border-bottom: 1px solid var(--light);
+    border-bottom: 1px solid var(--accent);
 }
 
 /* pseudos */
@@ -302,6 +318,8 @@ nav > button:focus:not(.selected) {
     outline: none;
     box-shadow: none;
     border-bottom: 1px solid var(--light);
+    margin-top: 2px; 
+    /* margin-top 2px makes up for the border shifting */
 }
 
 .selected {
@@ -310,11 +328,11 @@ nav > button:focus:not(.selected) {
 
     color: var(--accent);
     border-bottom-color: var(--accent);
-    border-bottom-width: 4px;
+    border-bottom-width: 1px;
 }
 
 .item-selected {
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    box-shadow: var(--shadow-large);
 }
 
 

@@ -1,18 +1,20 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 
 module.exports = {
    mode: 'production',
    entry: path.resolve(__dirname, 'src/index.js'),
-   devtool: false, // Disable source maps in production
+   devtool: 'inline-source-map',
+   devServer: {
+       static: './dist',
+       watchFiles: ["src/*.html"],
+   },     
    module: {
        rules: [
          {
            test: /\.css$/i,
-           use: [MiniCssExtractPlugin.loader, 'css-loader'],
+           use: ['style-loader', 'css-loader'],
          },
          {
            test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -31,24 +33,13 @@ module.exports = {
    plugins: [
        new HtmlWebpackPlugin({
            template: 'src/index.html',
-           minify: true,
-       }),
-       new MiniCssExtractPlugin({
-           filename: '[name].[contenthash].css',
-           chunkFilename: '[id].[contenthash].css',
        }),
    ],
-   optimization: {
-       minimize: true,
-       minimizer: [
-           new CssMinimizerPlugin(),
-           new TerserPlugin(),
-       ],
-   },
    output: {
        path: path.resolve(__dirname, 'dist'),
-       filename: '[name].[contenthash].js',
+       filename: 'bundle.js',
        clean: true,
-       publicPath: '/', // Adjust this if needed
+       publicPath: '/',
    },
 };
+

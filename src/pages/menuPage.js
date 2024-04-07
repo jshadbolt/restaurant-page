@@ -34,9 +34,10 @@ function menuPage(target) {
             btn.parentElement.querySelector('img').classList.remove('expandedImg')
             btn.parentElement.classList.remove('item-selected')
         } else {
-            styleSelected(btn, menuWrapper, 'button', 'expandedBtn')
-            styleSelected(btn.parentElement.querySelector('img'), menuWrapper, 'img', 'expandedImg')
-            styleSelected(btn.parentElement, menuWrapper, 'div', 'item-selected')
+            // use true for parameter 'ignore' to allow multiple menu items expanded same time
+            styleSelected(btn, menuWrapper, 'button', 'expandedBtn', true)
+            styleSelected(btn.parentElement.querySelector('img'), menuWrapper, 'img', 'expandedImg', true)
+            styleSelected(btn.parentElement, menuWrapper, 'div', 'item-selected', true)
         }
     }
 

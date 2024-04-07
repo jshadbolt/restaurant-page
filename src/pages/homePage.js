@@ -6,24 +6,54 @@ const lorem = "Consectetur adipisicing elit. Sequi quos odio error quasi omnis d
 
 function homePage(target) {
 
+    let homeWrapper = createEl.div({'class' : 'home-wrapper'})
+
     let title = createEl.div({'class' : 'title'})
     title.textContent = 'Bakery Bordeaux'
 
     const hero = createEl.div({'class' : 'hero'})
-    const heroImg = new Image()
-    heroImg.src = pic
+    // const heroImg = new Image()
+    // heroImg.src = pic
 
-    hero.appendChild(heroImg)
+    // hero.appendChild(heroImg)
 
-    const paraWrap = createEl.element('div', {'class' : 'para-wrap'})
-    const para = createEl.element('p', {'class' : 'para'})
-    para.textContent = lorem
-    paraWrap.appendChild(para)
     
-    attachEl(title, target, 'append')
-    attachEl(hero, target, 'append')
-    attachEl(paraWrap, target, 'append')
 
+
+    function createHomeSection1() {
+        let homeTextWrap = createEl.div({'class' : 'home-text-wrap'})
+    
+        let title = createEl.div({'class' : 'home-title'})
+        title.textContent = `The timeless elegance of French pastry artistry.`
+    
+        let description1 = createEl.element('p', {'class' : 'home-description'})
+        description1.textContent = lorem
+
+        let description2 = createEl.element('p', {'class' : 'home-description'})
+        description2.textContent = lorem.slice(0, lorem.length / 2) + ' ' + lorem
+    
+        homeTextWrap.appendChild(title)
+        homeTextWrap.appendChild(description1)
+        homeTextWrap.appendChild(description2)
+
+        homeWrapper.appendChild(homeTextWrap)
+    }
+
+
+    attachEl(title, homeWrapper, 'append')
+    attachEl(hero, homeWrapper, 'append')
+    createHomeSection1()
+
+    attachEl(homeWrapper, target, 'append')
+
+
+
+
+    let footer = createEl.div({'class' : 'home-footer'})
+    let copyright = createEl.div({'id' : 'copyright'})
+
+    footer.appendChild(copyright)
+    homeWrapper.appendChild(footer)
 
 }
 

@@ -67,7 +67,6 @@ body {
 }
 
 nav {
-
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -85,7 +84,7 @@ nav > button {
     padding: 5px 15px;
 
     color: var(--light);
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-family: 'playfair';
     font-style: italic;
 
@@ -94,6 +93,10 @@ nav > button {
 
 #content {
 
+}
+
+.home-wrapper {
+    padding: 0 100px;
 }
 
 .title {
@@ -117,45 +120,61 @@ nav > button {
 }
 
 .hero {
-    height: 400px;
+    height: 500px;
     width: 100%;
     margin-bottom: 25px;
+
+    background-image: url('./img/hero.jpg');
+
+    /* Set a specific height */
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* width: 45ch; */
 }
 
-.hero > img {
+/* .hero > img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     display: block;
+} */
+
+.home-text-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 100px 100px;
 }
 
 
-.para-wrap {
-    display: flex;
-    justify-content: center;
+.home-title {
 
     font-family: 'playfair';
     font-weight: bold;
+    font-size: 3rem;
+    max-width: 25ch;
     text-transform: uppercase;
 
-    background-image: url('./img/hero.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0% 25%;
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
+
     /* filter: brightness(1.5); */
     filter: hue-rotate(180deg) saturate(0.2);
 
+
+
 }
 
-.para {
-    text-align: justify;
+.home-description {
+    text-align: center;
     max-width: 45ch;
     font-size: 0.9rem;
-    padding: 0 15px;
+    /* padding: 0 15px; */
     letter-spacing: 2px;
+
+    font-family: 'playfair';
 
 }
 
@@ -231,7 +250,7 @@ nav > button {
     z-index: 2;
 }
 
-.itemTextContent, .guide, .section-title, .about-page-wrapper, .contacts {
+.itemTextContent, .guide, .section-title, .about-page-wrapper, .contacts, .home-description {
     text-align: justify;
     color: var(--light);
     font-size: 1rem;
@@ -429,15 +448,17 @@ nav > button {
     width: 50ch;
 }
 
-.about-footer {
-    padding: 10px 20px;
+.home-footer {
+    padding: 5px 10px;
+    background-color: var(--accent);
+    font-size: 0.8rem;
+    font-family: 'Montserrat';
+    margin-bottom: 100px;
 }
 
 #mission-title {
     text-align: end;
 }
-
-
 
 /* pseudos */
 

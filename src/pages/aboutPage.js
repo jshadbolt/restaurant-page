@@ -101,8 +101,8 @@ function aboutPage(target) {
     // target.appendChild(footer)
 
 
-    let bannerTwo = createEl.div({'class' : 'about-banner-two'})
-    target.appendChild(bannerTwo)
+    // let bannerTwo = createEl.div({'class' : 'about-banner-two'})
+    // target.appendChild(bannerTwo)
 
     // add some about the team
     // add more images, spanning whole length of website

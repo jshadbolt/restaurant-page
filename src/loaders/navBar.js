@@ -4,7 +4,7 @@ import styleSelected from '../utility/styleSelected.js';
 function navBar() {
     
     document.addEventListener('DOMContentLoaded', () => {
-        loadContent('home');
+        loadContent('about');
     });
 
     const nav = document.querySelector('nav')

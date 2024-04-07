@@ -61,17 +61,20 @@ img, picture, svg, video {
 
 body {
     color: var(--light);
-    background-color: var(--dark);
+    background: linear-gradient(0deg, rgba(245,245,245,1) 0%, rgba(239,239,239,1) 100%);
+
+
 }
 
 nav {
+
     display: flex;
     justify-content: center;
     gap: 10px;
     width: 100%;
     background-color: var(--brand-main);
     position: relative;
-    padding: 10px 0 0;
+    padding: 10px 0 10px 0;
 }
 
 nav > button {
@@ -82,7 +85,7 @@ nav > button {
     padding: 5px 15px;
 
     color: var(--light);
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-family: 'playfair';
     font-style: italic;
 
@@ -228,7 +231,7 @@ nav > button {
     z-index: 2;
 }
 
-.itemTextContent, .guide, .section-title, .about-page-wrapper {
+.itemTextContent, .guide, .section-title, .about-page-wrapper, .contacts {
     text-align: justify;
     color: var(--light);
     font-size: 1rem;
@@ -256,7 +259,7 @@ nav > button {
     margin-bottom: 50px;
 }
 
-.section-title, .item-title {
+.section-title, .item-title, .contacts > li {
     font-weight: bold;
     text-transform: uppercase;
 
@@ -320,37 +323,121 @@ nav > button {
     border-bottom: 1px solid var(--accent);
 }
 
+.about-banner-one, .about-banner-two {
+    /* width: 95ch; */
+    /* margin: auto; */
+
+  /* width: 500px; */
+
+      /* The image used */
+  background-image: url('./img/about/3.jpg');
+
+  /* Set a specific height */
+  height: 100px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* width: 45ch; */
+}
+
+
+
 .about-page-wrapper {
-    max-width: 45ch;
-    margin: auto;
-    padding: 50px 0 100px 0;
-}
-
-.about-title {
-    margin-bottom: 50px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.about-description {
-    line-height: 160%;
-}
-
-.about-photo {
-    margin: 30px 0;
+    /* margin: auto; */
+    padding: 100px 0 0px 0;
 }
 
 .contacts {
+    /* background-color: var(--accent); */
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
     list-style-type: none;
-    color: var(--accent);
-    /* display: flex; */
-    font-size: 0.9rem;
+
     text-align: center;
+    margin: auto;
+    padding-bottom: 150px;
+}
+
+.contact-title {
+    margin-bottom: 50px;
+}
+
+.contacts > li:hover {
+    color: var(--accent);
+}
+
+.text-photo-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    height: min-content;
+    margin: 30px 0 200px;
+}
+
+.text-photo-wrapper:last-of-type {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 30px;
+    height: min-content;
+    padding-left: 20px;
+}
+
+.text-photo-wrapper-textContent {
+    max-width: 45ch;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
+
+.about-description {
+    line-height: 190%;
+}
+
+
+.about-title, .contact-title  {
+    font-weight: bold;
+    font-size: 3rem;
+    /* max-width: 45ch; */
+    /* margin: auto; */
+    /* text-transform: uppercase; */
+    padding-bottom: 50px;
+    /* text-align: left; */
+}
+
+.about-photo {
+    width: 45ch;
+    /* width:40%; */
+
+    /* margin: auto; */
+  
+        /* The image used */
+
+  
+    /* Set a specific height */
+    height: 100%;
+    
+}
+
+#about-photo2 {
+    width: 50ch;
 }
 
 .about-footer {
     padding: 10px 20px;
 }
+
+#mission-title {
+    text-align: end;
+}
+
+
 
 /* pseudos */
 
@@ -411,3 +498,7 @@ nav > button:focus:not(.selected) {
 
 }
 
+
+.about-title:first-letter, .contact-title:first-letter {
+    color: var(--accent);
+}
